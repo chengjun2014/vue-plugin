@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>VIP视频解析升级版</title>
+		<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+	</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<form method="get" class="form-inline">
+					<div class="input-group col-md-5">
+						<label for="exampleInputName2">选择接口</label>
+						<select class="form-control input-lg" id="interface">
+							<option value="http://50town.com/mf/?url=">逸轩通用vip接口0</option>
+							<option value="http://17kyun.com/api.php?url=">逸轩通用vip接口1</option>
+							<option value="http://www.wmxz.wang/video.php?url=">逸轩通用vip接口2</option>
+							<option value="http://www.vipjiexi.com/yun.php?url=">逸轩通用vip接口3</option>
+							<option value="http://api.svip.baiyug.cn/svip/index.php?url=">逸轩④号引擎系统</option>
+							<option value="http://jiexi.071811.cc/jx2.php?url=">逸轩5号引擎系统</option>
+							<option value="http://www.sfsft.com/admin.php?url=">逸轩6号引擎系统</option>
+							<option value="https://api.47ks.com/webcloud/?v=">逸轩7号引擎系统</option>
+							<option value="http://www.wpswan.com/mzr/vipparse/index.php?url=">逸轩8号引擎系统</option>
+							<option value="http://qtzr.net/s/?qt=">9号解析-不能播放群里联系逸轩</option>
+							<option value="http://api.xfsub.com/index.php?url=">10号小旋风★新</option>
+							<option value="http://api.baiyug.cn/vip/index.php?url=">11号优酷云解析★新</option>
+							<option value="http://000o.cc/jx/ty.php?url=">12号通用接口★新</option>
+						</select>
+					</div>
+					<div class="input-group col-md-5">
+						<label for="exampleInputName2">播放地址</label>
+						<input class="form-control input-lg" type="search" placeholder="输入播放地址" id="url">
+					</div>
+					<div class="input-group col-md-2">
+						<button id="playerBtn" type="button" class="btn btn-primary btn-md">观看</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div id="kj" class="panel-body">
+						<iframe src="" id="player" width="100%" height="400px" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#playerBtn').click(function() {
+			var _url = document.getElementById("url").value;
+			var interfaceSelect = document.getElementById("interface");
+			var jk = interfaceSelect.selectedIndex;
+			var _host = interfaceSelect.options[jk].value;
+			
+			$("#player").attr("src", _host + _url);
+		})
+	})
+</script>
+</body>
+</html>

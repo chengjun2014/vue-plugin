@@ -1,0 +1,13 @@
+
+.vue-toast {
+	display: inline-block;
+	width: 300px;
+	height: 200px;
+	border: 1px solid #f30;
+	position: absolute;
+	left: 0;
+	top: -9999px;
+}
+.vue-top {
+	top: 30px;
+}
